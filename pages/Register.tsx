@@ -282,7 +282,6 @@ const Register: React.FC = () => {
                   </div>
                   <FormFile label="Scan Akta Kelahiran" required fileName={fileNames.akta} isProcessing={fileProcessing.akta} onChange={(e) => handleFileChange(e, 'akta')} />
                   <FormFile label="Scan Kartu Keluarga (KK)" required fileName={fileNames.kk} isProcessing={fileProcessing.kk} onChange={(e) => handleFileChange(e, 'kk')} />
-                  ```tsx id="o9y3jx"
 <FormFile
   label="Scan Kartu NISN"
   fileName={fileNames.nisn}
@@ -296,7 +295,6 @@ const Register: React.FC = () => {
   isProcessing={fileProcessing.rapor}
   onChange={(e) => handleFileChange(e, 'rapor')}
 />
-```
 
                   
                   <div className="col-span-full mt-6">
