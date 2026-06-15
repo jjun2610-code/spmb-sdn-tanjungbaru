@@ -157,7 +157,7 @@ const Register: React.FC = () => {
                   <FormInput label="Nama Lengkap" name="nama" value={formData.nama} onChange={handleChange} required />
                   <FormInput label="NIK" name="nik" type="number" value={formData.nik} onChange={handleChange} required />
                   <FormInput label="Nomor KK" name="nomorKK" type="number" value={formData.nomorKK} onChange={handleChange} required />
-                  <FormInput label="NISN" name="nisn" type="number" value={formData.nisn} onChange={handleChange} required />
+                  <FormInput label="NISN" name="nisn" type="number" value={formData.nisn} onChange={handleChange} />
                   <FormInput label="Nomor Telepon" name="telepon" type="number" value={formData.telepon} onChange={handleChange} required />
                   
                   <div className="grid grid-cols-2 gap-4">
@@ -176,8 +176,8 @@ const Register: React.FC = () => {
 
                   <FormSelect label="Jenis Kelamin" name="jenisKelamin" value={formData.jenisKelamin} onChange={handleChange} options={['Laki-laki', 'Perempuan']} required />
                   <FormSelect label="Agama" name="agama" value={formData.agama} onChange={handleChange} options={RELIGIONS} required />
-                  <FormInput label="Asal Sekolah" name="asalSekolah" value={formData.asalSekolah} onChange={handleChange} required />
-                  <FormInput label="NPSN Sekolah Asal" name="npsnSekolah" type="number" value={formData.npsnSekolah} onChange={handleChange} required />
+                  <FormInput label="Asal Sekolah" name="asalSekolah" value={formData.asalSekolah} onChange={handleChange}/>
+                  <FormInput label="NPSN Sekolah Asal" name="npsnSekolah" type="number" value={formData.npsnSekolah} onChange={handleChange} />
                 </div>
                 
                 <h4 className="font-bold text-slate-700 mt-8 mb-4 border-b pb-2">Alamat & Keluarga</h4>
@@ -282,8 +282,22 @@ const Register: React.FC = () => {
                   </div>
                   <FormFile label="Scan Akta Kelahiran" required fileName={fileNames.akta} isProcessing={fileProcessing.akta} onChange={(e) => handleFileChange(e, 'akta')} />
                   <FormFile label="Scan Kartu Keluarga (KK)" required fileName={fileNames.kk} isProcessing={fileProcessing.kk} onChange={(e) => handleFileChange(e, 'kk')} />
-                  <FormFile label="Scan Kartu NISN" required fileName={fileNames.nisn} isProcessing={fileProcessing.nisn} onChange={(e) => handleFileChange(e, 'nisn')} />
-                  <FormFile label="Scan Rapor Terakhir" required fileName={fileNames.rapor} isProcessing={fileProcessing.rapor} onChange={(e) => handleFileChange(e, 'rapor')} />
+                  ```tsx id="o9y3jx"
+<FormFile
+  label="Scan Kartu NISN"
+  fileName={fileNames.nisn}
+  isProcessing={fileProcessing.nisn}
+  onChange={(e) => handleFileChange(e, 'nisn')}
+/>
+
+<FormFile
+  label="Scan Rapor Terakhir"
+  fileName={fileNames.rapor}
+  isProcessing={fileProcessing.rapor}
+  onChange={(e) => handleFileChange(e, 'rapor')}
+/>
+```
+
                   
                   <div className="col-span-full mt-6">
                     <h4 className="font-bold text-slate-800 mb-4 border-b pb-2 uppercase text-xs tracking-widest">Berkas Opsional (Jika Ada)</h4>
